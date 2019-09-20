@@ -27,16 +27,13 @@ let faveColors = ['white', 'blue', 'pink']
 
 let me = {
     firstName: 'Andee',
-    superHeroName: 'Candle Hoarder',
+    superHeroName: 'Super Andee',
     homeTown: 'Sac Town',
     superPowers: ['Candle Hoarding', 'Unlimited Shopping Stamina', 'Super Napping'],
     superPowerXP: function(){
-        return Math.floor(Math.random() * 100) + 1
-    },
-    profileImage: `https://randomuser.me/api/portraits/med/lego/${Math.floor(Math.random() * 10) + 1 }.jpg`
-
-
-
+        return Math.floor(Math.random() * 100) + 1},
+    profileImage: function(){
+        return `https://randomuser.me/api/portraits/med/lego/${Math.floor(Math.random() * 10) + 1 }.jpg`}
 }
 
 //////////////////Step 3////////////////////
@@ -55,14 +52,14 @@ let homeTown = me.homeTown
 
 // CODE HERE
 
-function setColor(arr){
+var setColor = arr => {
     arr.splice(3)
-    for(let i = 0; i < 0; i++){
+    for(let i = 0; i < arr.length; i++){
         if(arr[i] === 'blue'){
             arr[i] === '4D4DFF'
         }
     }
-   background(arr)
+    background (arr[0],arr[1],arr[2])
 }
 
 //////////////////Step 5////////////////////
@@ -70,9 +67,9 @@ function setColor(arr){
 
 // CODE HERE
 
-function setPowers (arr){
+var setPowers = arr => {
     for(let i = 0; i < arr.length; i++){
-         createLi(arr[i])
+        createLi(arr[i])
     }
 }
 
@@ -81,9 +78,10 @@ function setPowers (arr){
 //Lastly, create a function called redactInfo that will take in an obj as a paramter. Let's imagine our super hero needs to go undercover and we need to remove all info about them. That is what this function will do. Loop over the object and change each keys value to 'redacted'. Outside of the loop but still in the redactInfo function, run the function redacted() which is a function we created that will update the text on the screen.
 
 // CODE HERE
-function redactInfo(obj){
-    for(let i = 0; i < obj.length; i++){
-        obj[i] === 'redacted'
+var redactInfo = obj => {
+    for(let key in obj){
+        obj.key === 'redacted'
+        console.log('hit')
     }
 
     redacted()
