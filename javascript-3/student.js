@@ -7,6 +7,7 @@
 // Code Here
 
 let groceries = ['salad dressing', 'chocolate', 'pomegranate']
+console.log(groceries[2])
 
 //////////////////STEP 2////////////////////
 //Create a variable called 'yourName' that is equal to your name as a string
@@ -27,8 +28,9 @@ let setGroceryListTitle = x => `${x}'s Grocery List`
 
 // Code Here
 
-function addItem(item){
-    return groceries.push(item)
+let addItem = item =>{
+    console.log('jh',groceries)
+    groceries.push(item)
     displayData()
 }
 
@@ -38,7 +40,7 @@ function addItem(item){
 // Code Here
 
 function removeItem (index){
-    return groceries.splice(index,1)
+    groceries.splice(index,1)
     displayData()
 }
 
@@ -50,7 +52,7 @@ function removeItem (index){
 function checkGroceryCount (){
     if(groceries.length >= 5){
         return 'That looks like a big trip'
-    } else if(groceries.length = 1){
+    } else if(groceries.length === 1){
         return '1 item'
     } else {
         return `${groceries.length} items`
